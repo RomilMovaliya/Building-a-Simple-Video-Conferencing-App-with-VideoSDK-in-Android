@@ -1,6 +1,9 @@
 # Building a Simple Video Conferencing App with VideoSDK in Android
 - In this blog post, we’ll go through integrating the VideoSDK into an Android project to create a simple video conferencing app. The VideoSDK provides powerful APIs for real-time video and audio communication, making it an excellent choice for developers looking to implement video conferencing features.
 
+
+[![Video-Tutorial](https://github.com/RomilMovaliya/Building-a-Simple-Video-Conferencing-App-with-VideoSDK-in-Android/blob/main/DocumentationStuff/thumbnail.jpg)](https://youtu.be/exfgVyIJuyo)
+
 # Prerequisites
 - Make sure you have the following before we begin.
 
