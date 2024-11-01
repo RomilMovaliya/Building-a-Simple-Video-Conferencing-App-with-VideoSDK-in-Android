@@ -12,13 +12,25 @@
     -  A mobile device that runs `Android 5.0` or `later`.  
 3. VideoSDK account to get your API key.
 
-## 📚 **Table of Contents**
+##  **Table of Contents**
 
-- [📦 **Basic Implementation**](#creating-a-new-android-project)
-- [😇 **Conclusion**](#conclusion)
-- [🧠 **FAQS Section**](#faqs-section)
+| **Content Index**                          | **Content Title**                 |
+|------------------------------------------------|-----------------------------------------|
+|`1.`                            | [ **Basic Implementation**](#creating-a-new-android-project)                                     |
+|`2.`                               | [ **JoiningScreen Implementation**](#step-2-creating-joining-screen)                             |
+|`3.`                              | [ **MeetingScreen Implementation**](#step-3-finally-we-are-creating-a-meeting-screen)            |
+|`4.`                             | [ **Conclusion**](#conclusion)                                                                   |
+|`5.`                              | [ **FAQS Section**](#faqs-section)                                                               |
 
-  
+
+
+
+
+
+
+# Architecture of my Project Implementation.
+![Diagram.JPG](https://github.com/RomilMovaliya/VideoSDK-Task/blob/main/DocumentationStuff/Concept%20map%20(Community).jpg)
+
 # Creating A New Android Project
 
 - Create a new Android project and select Empty activity.
@@ -67,7 +79,6 @@ dependencies {
 
 > `Note` : If your project has set `android.useAndroidX=true`, then you need to set `android.enableJetifier=true` in the `gradle.properties` file to migrate your project to AndroidX and avoid duplicate class conflict.
 
-# Architecture of my Project Implementation.
 
 # Step 1: First We Initializing VideoSDK
 Create MainApplication class which will extend the `android.app.Application`.
@@ -152,8 +163,11 @@ public class MainApplication extends Application {
 </LinearLayout>
 ```
 
-# Create Meeting API Integration Stag
+# Create Meeting API Integration Stage
 - Here we are creating a private variable `sampleToken` in the `JoinActivity.java` class that basically holds the token that you generated from [VideoSDK Dashboard](https://www.videosdk.live/). It is used for `VideoSDK config` as well as `meetingId generating` purpose.
+  
+![Integration.JPG](https://github.com/RomilMovaliya/VideoSDK-Task/blob/main/DocumentationStuff/Slide2.JPG)
+
 - In `JoinActivity.java` file,
 
 ```java
@@ -283,7 +297,7 @@ public class JoinActivity extends AppCompatActivity {
 ```
 
 > Note :  Make sure to include the import `import android.Manifest;`  for Manifest in your `JoinActivity` class. If it is not there then it will show you error `Cannot resolve symbol 'RECORD_AUDIO'" usually occurs because the Manifest class hasn't been imported properly`.
-# Look Our UI View,
+
 
 
 # Step 3: Finally We are Creating a Meeting Screen
@@ -480,7 +494,6 @@ public class MeetingActivity extends AppCompatActivity {
 
 ```
 
-# Result,
 
 # Step 5: Handling the Participants View
 1. We show all the participates in the recyler view so that reason we create one `item_remote_peer.xml` file in the `res/layout` folder.
@@ -693,7 +706,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 # Final Result of Our Dedicatiion
 
-
+![OutputScreenshot.JPG](https://github.com/RomilMovaliya/VideoSDK-Task/blob/main/DocumentationStuff/Slide1.JPG)
 
 
 # conclusion
