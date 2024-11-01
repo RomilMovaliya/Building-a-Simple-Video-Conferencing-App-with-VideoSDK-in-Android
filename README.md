@@ -1,11 +1,25 @@
+# Building a Simple Video Conferencing App with VideoSDK in Android
+- In this blog post, we’ll go through integrating the VideoSDK into an Android project to create a simple video conferencing app. The VideoSDK provides powerful APIs for real-time video and audio communication, making it an excellent choice for developers looking to implement video conferencing features.
+
+# Prerequisites
+- Make sure you have the following before we begin.
+
+1. Basics of Android development.
+2. Android Studio installed on your computer.
+    -  Java Development Kit.
+    -  Android Studio `3.0` or `later`.
+    -  Android SDK API Level `21` or `higher`.
+    -  A mobile device that runs `Android 5.0` or `later`.  
+3. VideoSDK account to get your API key.
+
 ## 📚 **Table of Contents**
 
-- [📦 **Basic Implementation**](#videosdk-task)
-- [🔥 **Decorating Our Implementation**](#decorating-our-implementation)
+- [📦 **Basic Implementation**](#creating-a-new-android-project)
+- [😇 **Conclusion**](#conclusion)
 - [🧠 **FAQS Section**](#faqs-section)
-  
-# VideoSDK Task
 
+  
+# Creating A New Android Project
 
 - Create a new Android project and select Empty activity.
 - In `File > New > New Project > Empty Views Activity` then create a project.
@@ -53,9 +67,7 @@ dependencies {
 
 > `Note` : If your project has set `android.useAndroidX=true`, then you need to set `android.enableJetifier=true` in the `gradle.properties` file to migrate your project to AndroidX and avoid duplicate class conflict.
 
-# Structure of my Project
-
-# Application Architecture of my Project
+# Architecture of my Project Implementation.
 
 # Step 1: First We Initializing VideoSDK
 Create MainApplication class which will extend the `android.app.Application`.
@@ -141,7 +153,7 @@ public class MainApplication extends Application {
 ```
 
 # Create Meeting API Integration Stag
-- Here we are creating a private variable `sampleToken` in the `JoinActivity.java` class that basically holds the token that you generated from VideoSDK Dashboard. It is used for `VideoSDK config` as well as `meetingId generating` purpose.
+- Here we are creating a private variable `sampleToken` in the `JoinActivity.java` class that basically holds the token that you generated from [VideoSDK Dashboard](https://www.videosdk.live/). It is used for `VideoSDK config` as well as `meetingId generating` purpose.
 - In `JoinActivity.java` file,
 
 ```java
@@ -682,61 +694,35 @@ protected void onCreate(Bundle savedInstanceState) {
 # Final Result of Our Dedicatiion
 
 
-# Decorating Our Implementation
-
-# Styling add to the Buttons
-- Add `ic_end_call.xml` file In this `app\src\main\res\drawable\` path.
-
-```xml 
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="24dp"
-    android:height="9dp"
-    android:viewportWidth="24"
-    android:viewportHeight="9">
-  <path
-      android:pathData="M12.001,1.858C10.443,1.855 8.893,2.08 7.401,2.526V5.409C7.398,5.587 7.343,5.76 7.245,5.908C7.146,6.056 7.007,6.173 6.845,6.245C5.882,6.693 4.986,7.271 4.18,7.962C3.987,8.134 3.738,8.229 3.48,8.227C3.218,8.23 2.966,8.131 2.775,7.953L0.295,5.655C0.202,5.572 0.128,5.471 0.077,5.357C0.026,5.243 0,5.12 0,4.996C0,4.871 0.026,4.748 0.077,4.635C0.128,4.521 0.202,4.419 0.295,4.337C3.539,1.513 7.701,-0.028 12.001,0C16.3,-0.028 20.462,1.514 23.705,4.337C23.798,4.42 23.872,4.521 23.923,4.635C23.973,4.748 24,4.871 24,4.995C24,5.119 23.974,5.242 23.923,5.354C23.872,5.467 23.798,5.568 23.705,5.65L21.229,7.948C21.037,8.125 20.785,8.223 20.524,8.222C20.266,8.223 20.017,8.129 19.824,7.957C19.018,7.266 18.121,6.688 17.159,6.24C16.996,6.168 16.857,6.052 16.759,5.904C16.66,5.756 16.606,5.582 16.603,5.405V2.521C15.109,2.079 13.559,1.855 12.001,1.858Z"
-      android:fillColor="#ffffff"/>
-</vector>
-
-```
-
-- Add Following lines into the `colors.xml` file that is located in `app\src\main\res\values\` path.
-```xml 
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    ...
-
-    <!--reds-->
-    <color name="md_red_400">#FF5D5D</color>
-    <color name="md_red_500">#EF5350</color>
-</resources>
-```
-
-- Add Following lines into the `strings.xml` file that is located in `app\src\main\res\values\` path.
-```xml 
-<resources>
-    ...
-    <string name="leave_meeting">Leave meeting</string>
-</resources>
-```
-
-- Add Following lines into the `themes.xml` file that is located in `app\src\main\res\values\themes` path.
-```xml 
- <style name="fab_square" parent="">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">12dp</item>
- </style>
-```
 
 
+# conclusion
+- Now you have a basic video conferencing app bundled with VideoSDK! This example is basic, and can be extended by adding features such as chat, user interfaces, and advanced video controls.
+
+- See the [official VideoSDK documentation](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/quick-start) for more detailed information and features.
 
 ## FAQS Section
 
 > **1. Why we are creating adapter in the Android?** <br>
 - We use adapter that serves bridge between data source and UI component that always display the data.
-- For example, Adaper oprtimize the performance by resuing the views. when a view goes off-screen, its resources can be reused for new data, which helps to reduce memory usage and improve scrolling performance.
+- For example, Adapter optimize the performance by resuing the views. when a view goes off-screen, its resources can be reused for new data, which helps to reduce memory usage and improve scrolling performance.
 - `data source` : such as `arrays`, `lists`, or `databases`.
 - `UI component` : such as `RecyclerView`, `ListView`, or `GridView`.
+
+<br>
+
+> **2. What is VideoSDK?** <br>
+- VideoSDK is a `platform that provides APIs and set of tools` for developers to add `real-time video` and `audio interactions` to a variety of applications, such as video conferencing, live streaming, and virtual events.
+
+<br>
+
+> **3. How do I get my VideoSDK API key?** <br>
+- First of all you have to register on [VideoSDK Website](https://www.videosdk.live/) and you will see the dashboard after completing sign in/sign up process. Then you will get `API from API section`.
+
+<br>
+
+> **4. Can I use the VideoSDK for free?** <br>
+- The VideoSDK offers a variety of pricing plans, But as a beginner we start with `PAY-AS-YOU-USE`, which is best plan, including a free tier with limited usage. See their pricing page for details on features and restrictions.
 
 
 
